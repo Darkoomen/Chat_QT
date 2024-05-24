@@ -10,10 +10,13 @@ class User
 	string _login;
 	string _username;
 	Hash _passwordHash;
+    string _email;
 public:
 	User();
 	User(string username, Hash passHash);
+    User(string username, string email, Hash passHash);
 	int checklogin(const string& login, const Hash& passHash) const;
 	string& getuserName();
-	int getUserID() const;
+    int getUserID() const;
+    string email() const;
 };

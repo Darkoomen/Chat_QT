@@ -9,6 +9,12 @@ User::User(string username, Hash passHash) :_login(username), _username(username
 {
 }
 
+User::User(string username, string email, Hash passHash) : _login(username), _username(username), _email(email), _passwordHash(passHash), _id(++userCounter)
+{
+
+}
+
+
 int User::checklogin(const string& login, const Hash& passHash) const
 {
 	if ((_login == login) && (_passwordHash == passHash)) return _id;
@@ -18,6 +24,11 @@ int User::checklogin(const string& login, const Hash& passHash) const
 string& User::getuserName() 
 {
 	return _username;
+}
+
+string User::email() const
+{
+    return _email;
 }
 
 int User::getUserID() const

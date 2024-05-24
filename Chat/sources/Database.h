@@ -15,7 +15,7 @@ public:
   vector<string> getUserList() const;
   string getUserName(int userId) const;
 	Database();
-	int addUser(string username, string password);
+    int addUser(string username, string email, string password);
 	int checkPassword(string username, string password);
 	void addChatMessage(string sender, string);
 	bool addPrivateMessage(string sender, string target, string message);

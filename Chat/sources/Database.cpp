@@ -35,12 +35,12 @@ Database::Database() : _users(), _messages()
 {
 }
 
-int Database::addUser(string username, string password)
+int Database::addUser(string username, string email, string password)
 {
 	if (!correctName(username)) return -1;
 	auto uit = _usersMapByName.find(username);
 	if (uit != _usersMapByName.end()) return -2;
-	User newUser = User(username, sha1(password));
+    User newUser = User(username, email, sha1(password));
 	_users.push_back(newUser);
   _usersMapByName.insert({ username, newUser.getUserID() });
 	return newUser.getUserID();

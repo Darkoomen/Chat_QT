@@ -166,7 +166,7 @@ bool CommandLineInterface::parsePM(string& s)
 bool CommandLineInterface::callRegister()
 {
 	_PMDest = "";
-	_currentLoginID = _db.addUser(_username, _password);
+    _currentLoginID = _db.addUser(_username, _email, _password);
 	_password = "";
 	if (_currentLoginID < 0) return false;
 	return true;

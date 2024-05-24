@@ -35,6 +35,7 @@ void RegistrationForm::on_buttonBox_accepted()
         return;
     }
     auto userID = m_dbPtr->addUser(ui->loginEdit->text().toStdString(),
+                                   ui->emailEdit->text().toStdString(),
                      ui->passwordEdit->text().toStdString());
     switch(userID)
     {
